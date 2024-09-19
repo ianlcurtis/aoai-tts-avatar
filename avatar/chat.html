@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Talking Avatar Chat Demo</title>
+    <title>Azure AI Avatar Demo</title>
     <link href="./css/styles.css" rel="stylesheet">
     <script src="https://aka.ms/csspeech/jsbrowserpackageraw"></script>
     <script src="./js/chat.js"></script>
 </head>
 <body>
-<h1>Talking Avatar Chat Demo</h1>
+<table border="0"><tr><td><img src="image/azure.jpg" width="50"></td><td><h2>Azure AI Avatar Demo</h2></td></tr></table>
 
-<div id="configuration">
+<button type="button" class="collapsible">Settings...</button>
+<div id="configuration" class="content">
   <h2 style="background-color: white; width: 300px;">Azure Speech Resource</h2>
   <label style="font-size: medium;" for="region">Region:</label>
   <select id="region" style="font-size: medium;">
@@ -117,6 +118,23 @@
   <div>
     <img id="uploadImgIcon" src="./image/attachment.jpg" alt="Button" style="cursor: pointer;" hidden />
   </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
 </body>
 
 </html>
